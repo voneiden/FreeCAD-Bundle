@@ -22,14 +22,29 @@ jobs:
         python_version: ["3.10", "3.11"]
         include:
           - os: windows-latest
+            python_version: "3.10"
             bundle_dir: conda/win
-            asset_pattern: FreeCAD_.*Windows-x86_64
+            asset_pattern: FreeCAD_.*Windows-x86_64-py310
           - os: macos-latest
+            python_version: "3.10"
             bundle_dir: conda/osx
-            asset_pattern: FreeCAD_.*macOS-x86_64
+            asset_pattern: FreeCAD_.*macOS-x86_64-py310
           - os: ubuntu-latest
+            python_version: "3.10"
             bundle_dir: conda/linux
-            asset_pattern: FreeCAD_.*Linux-x86_64
+            asset_pattern: FreeCAD_.*Linux-x86_64-py310
+          - os: windows-latest
+            python_version: "3.11"
+            bundle_dir: conda/win
+            asset_pattern: FreeCAD_.*Windows-x86_64-py311
+          - os: macos-latest
+            python_version: "3.11"
+            bundle_dir: conda/osx
+            asset_pattern: FreeCAD_.*macOS-x86_64-py311
+          - os: ubuntu-latest
+            python_version: "3.11"
+            bundle_dir: conda/linux
+            asset_pattern: FreeCAD_.*Linux-x86_64-py311
 
     steps:
       - if: matrix.os == 'windows-latest'
